@@ -8,6 +8,7 @@ void GA::init()
 	   srand(time(0));
            random_shuffle(str.begin(), str.end());
            fout<<str<<"\n";
+           cout<<"  "<<str<<"\n";
 	}
        cout<<"Done!\n";
 }

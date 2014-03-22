@@ -41,8 +41,7 @@ else
 
 fi
 echo -e "===========compiling cryptosystem=========="
-  g++ -time ./src/cryptosystem/*.cpp -o ./bin/cs 
-echo -e "......................................................OK"
-echo -e "=============compiling GA code============="
-  g++ -time ./src/cryptanalysis/*.cpp -o ./bin/ca
+#  g++ -time -c ./src/cryptosystem/*.cpp -o ./src/cs.o
+# g++ -c ./src/cryptanalysis/*.cpp -o ./src/ca.o
+  g++ ./src/cryptosystem/*.cpp ./src/cryptanalysis/*.cpp ./src/main.cpp -o ./bin/main 
 echo -e "......................................................OK"

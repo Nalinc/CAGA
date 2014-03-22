@@ -12,10 +12,9 @@ it = unigrams.begin();
 		
    for (it=unigrams.begin(); it!=unigrams.end(); ++it)
         f1<<it->first<<"\t"<<it->second<<"\n";
-        // cout<<it->first<<"\t"<<it->second<<"\n";  
 }
 
-void fanalysis::bigram()//fstream &f2)
+void fanalysis::bigram(fstream &f2)
 {	
 it = bigrams.begin();
 
@@ -26,10 +25,10 @@ it = bigrams.begin();
         bigrams.insert(it,pair<string,int>(s.substr(i, 2),1));
 		
    for (it=bigrams.begin(); it!=bigrams.end(); ++it)
-        cout<<it->first<<"\t"<<it->second<<"\n";	
+        f2<<it->first<<"\t"<<it->second<<"\n";	
 }
 
-void fanalysis::trigram()//fstream &f3)
+void fanalysis::trigram(fstream &f3)
 {
   it = trigrams.begin();
 
@@ -40,10 +39,10 @@ void fanalysis::trigram()//fstream &f3)
         trigrams.insert(it,pair<string,int>(s.substr(i, 3),1));
 		
    for (it=trigrams.begin(); it!=trigrams.end(); ++it)
-        cout<<it->first<<"\t"<<it->second<<"\n";	
+        f3<<it->first<<"\t"<<it->second<<"\n";	
 }
 
-
+/*
 int main()
 {
 FILE *f;
@@ -53,8 +52,9 @@ fscanf(f,"%s%s*c",pt,ct);
 printf("%s\n",ct);
 fclose (f);	
 
-fanalysis fa(ct);
+fanalysis fa(ct,"file.dat");
 
-	
 return 0;
 }
+
+*/

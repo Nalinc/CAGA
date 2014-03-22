@@ -1,7 +1,7 @@
 #include "affine.h"
 
 void Affine::cipher(string text)
-{  fout<<setw(35)<<text<<setw(40);
+{  fout<<setw(35)<<text<<setw(35);
    cout<<"\n :: Encryption :: \n";
    for(string::iterator it1 = text.begin(); it1 != text.end(); it1++)
    {  ch1 = encrypt(*it1);
@@ -10,7 +10,7 @@ void Affine::cipher(string text)
       ciphertext += ch1;               
    }
       fout<<"\n";
-      cout<<"\n\nDone!\nTraining set appended at:\n\"<project_root>/TrainingData/TSet.dat\" \n\n";
+      fout.close();
  //We'll later see if this is required in future!   
 
 /*   cout<<"\n :: Decryption :: \n";
@@ -38,8 +38,8 @@ char Affine::decrypt(char c)
       temp2 = char((z%26)+97);
    return temp2;
 }
-/*
 
+/*
 int main()
 {
 string str;
@@ -50,7 +50,6 @@ a.cipher(str);
 
 return 0;
 }
-
 */
 
 

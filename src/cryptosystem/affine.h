@@ -24,7 +24,7 @@ public:
     }
    ~Affine()
    {
-     fout.close();
+//     fout.close();
     }
    void cipher(string text);
    char encrypt(char c);

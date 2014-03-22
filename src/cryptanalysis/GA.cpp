@@ -12,11 +12,10 @@ void GA::init()
 	}
        cout<<"Done!\n";
 }
-
 /*
 int main()
 {
-	GA a;
-	a.init();
+	GA ga;
+	ga.init();
 }
 */

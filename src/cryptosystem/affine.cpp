@@ -38,7 +38,7 @@ char Affine::decrypt(char c)
       temp2 = char((z%26)+97);
    return temp2;
 }
-
+/*
 
 int main()
 {
@@ -51,6 +51,6 @@ a.cipher(str);
 return 0;
 }
 
-
+*/
 
 

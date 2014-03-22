@@ -2,7 +2,7 @@
 
 void GA::init()
 {
-      cout<<"\nGenerating Initial Chromosome Population(20 Nos)\n";
+    cout<<"\nGenerating Initial Chromosome Population(20 Nos)\n";
 	for(i=0;i<20;i++)
 	{
 	   srand(time(0));
@@ -13,9 +13,10 @@ void GA::init()
        cout<<"Done!\n";
 }
 
-
+/*
 int main()
 {
 	GA a;
 	a.init();
 }
+*/

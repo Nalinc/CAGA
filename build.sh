@@ -1,10 +1,10 @@
-echo -e "\n==========checking dependencies=========="
-   g++ --version
-echo -e "......................................................OK"
-echo -e "========fetching system information========"
+echo -e "========Fetching system information========"
    uname -a
 echo -e "......................................................OK"
-echo -e "=========Checking necessary files=========="
+echo -e "\n===========Checking dependencies==========="
+   g++ --version
+echo -e "......................................................OK"
+echo -e "\n=========Checking necessary files=========="
 if [ -d ./bin ];
 then 
      echo "./bin already in place................................OK"
@@ -40,8 +40,6 @@ else
      mkdir frequencyanalysis;
 
 fi
-echo -e "===========compiling cryptosystem=========="
-#  g++ -time -c ./src/cryptosystem/*.cpp -o ./src/cs.o
-# g++ -c ./src/cryptanalysis/*.cpp -o ./src/ca.o
-  g++ ./src/cryptosystem/*.cpp ./src/cryptanalysis/*.cpp ./src/main.cpp -o ./bin/main 
+echo -e "\n=============Compiling project============="
+  g++ -time ./src/cryptosystem/*.cpp ./src/cryptanalysis/*.cpp ./src/main.cpp -o ./bin/main 
 echo -e "......................................................OK"

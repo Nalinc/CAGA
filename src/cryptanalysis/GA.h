@@ -15,7 +15,7 @@ class GA
 public:
    GA()
    { str="abcdefghijklmnopqrstuvwxyz";
-     fout.open("./Chromosomes/gen.dat",ios::out|ios::app); 
+     fout.open("./Chromosomes/gen.dat",ios::out); 
    }
    void init();
    ~GA()

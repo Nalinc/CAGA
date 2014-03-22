@@ -7,7 +7,7 @@ int main()
   FILE * pFile;
   pFile = fopen ("./TSet.dat","r");
   while(fscanf(pFile, "%s%s%*c", str1,str2) != EOF)	
-      printf("%20s\t%20s\n",str1,str2);
+      printf("%c\n",str2[0]);
   fclose (pFile);
   return 0;
 

@@ -18,8 +18,7 @@ then
 	echo -e "\t ./run.sh -GUI\t\t\t\t:Enables GUI Mode(currently non-operational)"
 	echo -e "\t ./run.sh -CLI\t\t\t\t:Enables CLI Mode & Genetares Training Data(default)"	
 	echo -e "\t ./run.sh -help\t\t\t\t:Displays usage/help section"
-	echo -e "\t ./run.sh -train\t\t\t\t:Forks the module that generates training data"
-	echo -e "\t ./run.sh -p \t\t\t:Plots Chaotic Maps"
+	echo -e "\t ./run.sh -train\t\t\t:Forks the module that generates training data"
 	echo -e "\t ./run.sh -init \t\t\t:Initialise the cryptanalysis module"
 
 else

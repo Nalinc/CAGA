@@ -1,7 +1,7 @@
 #include "affine.h"
 
 void Affine::cipher(string text)
-{  fout<<setw(20)<<text<<setw(20);
+{  fout<<setw(35)<<text<<setw(40);
    cout<<"\n :: Encryption :: \n";
    for(string::iterator it1 = text.begin(); it1 != text.end(); it1++)
    {  ch1 = encrypt(*it1);

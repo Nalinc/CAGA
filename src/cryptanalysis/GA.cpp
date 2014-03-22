@@ -2,15 +2,15 @@
 
 void GA::init()
 {
-    cout<<"\nGenerating Initial Chromosome Population(20 Nos)\n";
+    cout<<"\n\t[Generating Initial Chromosome Population]\n";
 	for(i=0;i<20;i++)
 	{
 	   srand(time(0));
            random_shuffle(str.begin(), str.end());
            fout<<str<<"\n";
-           cout<<"  "<<str<<"\n";
+           cout<<"\t\t"<<str<<"\n";
 	}
-       cout<<"Done!\n";
+       cout<<"OK......Initial Chromosome Pool Populated\n";
 }
 /*
 int main()

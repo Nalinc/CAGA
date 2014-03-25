@@ -11,6 +11,7 @@ then
      echo "not functional atm" #./bin/ca
 
 elif [ "$1" == "-t" ];
+then
      ./bin/main -t
     
 elif [ "$1" == "-help" ];

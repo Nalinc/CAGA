@@ -7,10 +7,7 @@ using namespace std;
 int main(int argc,char **argv)
 {
 
-if(argc==2 && strcmp(argv[1],"-t")==0)
-{
-  exit(0);
-}
+
 //fork affine cipher to generate training data
     cout<<"=====Generating Training Data from cryptosystem=====";
     string str;
@@ -19,6 +16,9 @@ if(argc==2 && strcmp(argv[1],"-t")==0)
     Affine a;
     a.cipher(str);
     cout<<"\n\nOK......Training set appended at:\n\t\"<project_root>/TrainingData/TSet.dat\" \n\n";
+
+   if(argc==2 && strcmp(argv[1],"-t")==0)   
+      exit(0);
 
 //frequency analysis
    cout<<"===========Performing Frequency Analysis============";

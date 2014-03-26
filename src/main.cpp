@@ -39,6 +39,7 @@ int main(int argc,char **argv)
    cout<<"\n==========Initializing Genetic Algorithms===========";
 	GA ga;
 //	cout<<pt;
+   cout<<"\n========Encrypting Data Using Chromosome Pool=======";
 	cmap cm(pt);
 	
 

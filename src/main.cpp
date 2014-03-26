@@ -40,7 +40,7 @@ int main(int argc,char **argv)
 	GA ga;
 //	cout<<pt;
    cout<<"\n========Encrypting Data Using Chromosome Pool=======";
-	cmap cm(pt);
+	cmap cm(pt); //We'll later move this to GA.cpp
 	
 
 

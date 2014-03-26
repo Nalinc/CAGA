@@ -16,11 +16,13 @@ public:
    GA()
    { str="abcdefghijklmnopqrstuvwxyz";
      fout.open("./Chromosomes/gen.dat",ios::out); 
+     init();
+     fout.close();
    }
    void init();
    ~GA()
    {
-	  fout.close(); 
+//	  fout.close(); 
    }
 };
 

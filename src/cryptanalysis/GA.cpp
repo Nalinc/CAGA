@@ -11,6 +11,7 @@ void GA::init()
            cout<<"\t\t"<<str<<"\n";
 	}
        cout<<"OK......Initial Chromosome Pool Populated\n";
+
 }
 /*
 int main()

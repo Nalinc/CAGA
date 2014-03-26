@@ -1,4 +1,5 @@
 #include "./cryptanalysis/GA.h"
+#include "./cryptanalysis/cmap.h"
 #include "./cryptanalysis/fanalysis.h"
 #include "./cryptosystem/affine.h"
 #include <string.h>
@@ -37,8 +38,8 @@ int main(int argc,char **argv)
 //fork GA to generate test data
    cout<<"\n==========Initializing Genetic Algorithms===========";
 	GA ga;
-	ga.init();
-	
+//	cout<<pt;
+	cmap cm(pt);
 	
 
 

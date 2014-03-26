@@ -29,6 +29,7 @@ class cmap
 	file1.open("./Chromosomes/cipher_list.dat");
     this->str=str;
     mapping();
+    cout<<"\nOK......Mapping Performed\n";
     fclose(file);   
 	file1.close();
    }

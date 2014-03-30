@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <stdlib.h>
+#include <stdio.h>
 using namespace std;
 
 
@@ -20,13 +21,15 @@ class cmap
    {
    }
    
-   cmap(char str[50])
+   cmap(char str[50],int count)
    {
-	file = fopen ("./Chromosomes/gen.dat","r");
+//    int count=1; 
+ 	string s="./chromosomes/"+to_string(count)+".dat";
+	file = fopen (s.c_str(),"r");
 	if(file==NULL)
-	{cout<<"error"; exit(0);}
+	{cout<<"error\n"; exit(0);}
 	
-	file1.open("./Chromosomes/cipher_list.dat");
+	file1.open("./data/cipher_list.dat");
     this->str=str;
     mapping();
     cout<<"\nOK......Mapping Performed\n";

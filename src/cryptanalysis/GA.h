@@ -14,8 +14,8 @@ class GA
      fstream fout;
 public:
    GA()
-   { str="abcdefghijklmnopqrstuvwxyz";
-     fout.open("./Chromosomes/gen.dat",ios::out); 
+   { str="abcdefghijklmnopqrstuvwxyz"; 
+     fout.open("./chromosomes/1.dat",ios::out); 
      init();
      fout.close();
    }

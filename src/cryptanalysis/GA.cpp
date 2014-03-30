@@ -6,9 +6,9 @@ void GA::init()
 	for(i=0;i<20;i++)
 	{
 	   srand(time(0));
-           random_shuffle(str.begin(), str.end());
-           fout<<str<<"\n";
-           cout<<"\t\t"<<str<<"\n";
+       random_shuffle(str.begin(), str.end());
+       fout<<str<<"\n";
+       cout<<"\t\t"<<str<<"\n";
 	}
        cout<<"OK......Initial Chromosome Pool Populated\n";
 

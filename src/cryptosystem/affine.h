@@ -20,7 +20,7 @@ public:
    Affine()
    { a=5;b=8;
      ciphertext="";
-     fout.open("./TrainingData/TSet.dat",ios::out|ios::app); 
+     fout.open("./data/TSet.dat",ios::out|ios::app); 
     }
    ~Affine()
    {

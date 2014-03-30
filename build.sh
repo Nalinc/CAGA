@@ -12,19 +12,19 @@ else
      echo "creating ./bin folder  ...............................OK"
      mkdir bin;
 fi
-if [ -d ./Chromosomes ];
+if [ -d ./chromosomes ];
 then 
-     echo "./Chromosomes already in place........................OK"
+     echo "./chromosomes already in place........................OK"
 else 
-     echo "creating ./Chromosomes folder  .......................OK"
-     mkdir Chromosomes;
+     echo "creating ./chromosomes folder  .......................OK"
+     mkdir chromosomes;
 fi
-if [ -d ./TrainingData ];
+if [ -d ./data ];
 then 
-     echo "./TrainingData already in place.......................OK"
+     echo "./data already in place...............................OK"
 else 
-     echo "creating ./TrainingData folder  ......................OK"
-     mkdir TrainingData;
+     echo "creating ./data folder  ..............................OK"
+     mkdir data;
 fi
 if [ -d ./src ];
 then 
@@ -41,5 +41,5 @@ else
 
 fi
 echo -e "\n=============Compiling project============="
-  g++ -time ./src/cryptosystem/*.cpp ./src/cryptanalysis/*.cpp ./src/main.cpp -o ./bin/main 
+  g++ -time -std=c++0x ./src/cryptosystem/*.cpp ./src/cryptanalysis/*.cpp ./src/main.cpp -o ./bin/main 
 echo -e "......................................................OK"

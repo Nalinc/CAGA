@@ -23,12 +23,13 @@ class cmap
    
    cmap(char str[50],int count)
    {
-//    int count=1; 
- 	string s="./chromosomes/"+to_string(count)+".dat";
+ 	string s="./chromosomes/"+to_string(count)+".dat";// 	cout<<s;
 	file = fopen (s.c_str(),"r");
+//	file = fopen ("./chromosomes/1.dat","r");
+	
 	if(file==NULL)
 	{cout<<"error\n"; exit(0);}
-	
+
 	file1.open("./data/cipher_list.dat");
     this->str=str;
     mapping();

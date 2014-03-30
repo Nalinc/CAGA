@@ -9,15 +9,14 @@ void cmap::mapping()
   while(fscanf(file,"%s*c",tmp)!=EOF)  
   {  
     temp=tmp;	    
-    for(unsigned int i=0; i<str.length()&&temp.length(); ++i)
+    for(unsigned int i=0; i<str.length()&&temp.length(); i++)
     {
        char ch = str.at(i);
-       int x = int(ch) - 96;
+       int x = int(ch) - 97;
        text = temp.at(x);    
        file1<<text;
     }
     file1<<"\n";
-  
  //cout<<temp<<endl;
   }
 

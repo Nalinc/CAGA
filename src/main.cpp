@@ -1,13 +1,15 @@
 #include "./cryptanalysis/GA.h"
-#include "./cryptanalysis/cmap.h"
+//#include "./cryptanalysis/cmap.h"
 #include "./cryptanalysis/fanalysis.h"
 #include "./cryptosystem/affine.h"
 #include <string.h>
 using namespace std;
 
+char GA::opt[50];
+char GA::oct[50];
+
 int main(int argc,char **argv)
 {
-
 
 //fork affine cipher to generate training data
     cout<<"=====Generating Training Data from cryptosystem=====";
@@ -25,23 +27,24 @@ int main(int argc,char **argv)
    cout<<"===========Performing Frequency Analysis============";
 	FILE *f;
 	f = fopen ("./data/TSet.dat","r");
-	char pt[50],ct[50];
 	//fseek(f,-71,SEEK_END);
-    while(fscanf(f,"%s%s*c",pt,ct)!=EOF);
+//    static char GA::opt[50];static char GA::oct[50];
+    while(fscanf(f,"%s%s*c",GA::opt,GA::oct)!=EOF);
 	fclose (f);	
-	fanalysis fa(ct,"file.dat");
+	fanalysis fa(GA::oct,"file.dat");
     cout<<"\n\nOK......Frequency Analysis performed on given sample\n";
     cout<<"\tUnigrams->\"<project_root>/frequencyanalysis/uni/\"\n";
     cout<<"\tBiigrams->\"<project_root>/frequencyanalysis/bi/\"\n";
     cout<<"\tTrigrams->\"<project_root>/frequencyanalysis/tri/\"\n";
-
+  
 //fork GA to generate test data
    cout<<"\n==========Initializing Genetic Algorithms===========";
 	GA ga;
 //	cout<<pt;
+/*
    cout<<"\n========Encrypting Data Using Chromosome Pool=======";
 	cmap cm(pt,1); //We'll later move this to GA.cpp
-	
+	*/
 
 
 

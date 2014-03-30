@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include "cmap.h"
+
 using namespace std;
 
 class GA
@@ -13,13 +15,16 @@ class GA
      string str;
      fstream fout;
 public:
+    static char opt[50];
+    static char oct[50];
+
    GA()
-   { str="abcdefghijklmnopqrstuvwxyz"; 
-     fout.open("./chromosomes/1.dat",ios::out); 
+   { 
+	 str="abcdefghijklmnopqrstuvwxyz"; 
      init();
-     fout.close();
    }
    void init();
+   int fitness(string);
    ~GA()
    {
 //	  fout.close(); 

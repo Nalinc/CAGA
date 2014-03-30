@@ -33,7 +33,7 @@ public:
 
    //}
    void init();
-   void fitn();
+   void fitn(int gen);
    void calcfreq(int gen);
    ~GA()
    {

@@ -23,7 +23,7 @@ class cmap
    
    cmap(char str[50],int gen)
    {
- 	s="./chromosomes/"+to_string(gen)+".dat";// 	cout<<s;
+ 	s="./chromosomes/."+to_string(gen)+".dat";// 	cout<<s;
 	file = fopen (s.c_str(),"r");
 //	file = fopen ("./chromosomes/1.dat","r");
 	

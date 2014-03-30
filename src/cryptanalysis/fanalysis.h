@@ -38,12 +38,13 @@ public:
 	    unigram(f1);
 	    bigram(f2);
 	    trigram(f3);
+  	   f1.close();	
+	   f2.close();	
+	   f3.close();	
+
 	}	
 	~fanalysis()
 	{
-	   f1.close();	
-	   f2.close();	
-	   f3.close();	
 	}
 };
 

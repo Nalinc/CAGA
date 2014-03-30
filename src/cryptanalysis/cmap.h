@@ -14,7 +14,7 @@ class cmap
 //   ifstream file;
    FILE *file;
    ofstream file1;
-   string str;
+   string str,s;
    
    public:
    cmap()
@@ -23,14 +23,14 @@ class cmap
    
    cmap(char str[50],int gen)
    {
- 	string s="./chromosomes/"+to_string(gen)+".dat";// 	cout<<s;
+ 	s="./chromosomes/"+to_string(gen)+".dat";// 	cout<<s;
 	file = fopen (s.c_str(),"r");
 //	file = fopen ("./chromosomes/1.dat","r");
 	
 	if(file==NULL)
 	{cout<<"error\n"; exit(0);}
 	
-    string s="./data/"+to_string(gen)+"_crypt.dat";
+    s="./data/"+to_string(gen)+"_crypt.dat";
 	file1.open(s.c_str());
     this->str=str;
     mapping();

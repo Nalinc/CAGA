@@ -6,14 +6,19 @@
 #include <fstream>
 #include <iostream>
 #include "cmap.h"
+#include "fanalysis.h"
+#include "fitness.h"
 
 using namespace std;
 
 class GA
 {    
-	 int i;
-     string str;
+	 int i,count;
+     string str,s,f;
      fstream fout;
+     FILE *file;
+     char tmp[50];
+     FitN o;
 public:
     static char opt[50];
     static char oct[50];
@@ -23,8 +28,13 @@ public:
 	 str="abcdefghijklmnopqrstuvwxyz"; 
      init();
    }
+//   GA()
+  // {
+
+   //}
    void init();
-   int fitness(string);
+   void fitn();
+   void calcfreq(int gen);
    ~GA()
    {
 //	  fout.close(); 

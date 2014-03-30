@@ -4,6 +4,7 @@
 #include <string>
 #include <algorithm>
 #include <fstream>
+#include <cstdlib>
 #include <iostream>
 #include "cmap.h"
 #include "fanalysis.h"

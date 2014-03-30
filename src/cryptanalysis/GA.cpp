@@ -24,6 +24,7 @@ void GA::init()
 calcfreq(1);
 
 //CALCULATE FITTNESS
+   cout<<"\n=================N-Gram Statistics==================\n";
 fitn(1);//1->for 1st generation
 
 }
@@ -48,6 +49,8 @@ void GA::fitn(int gen)
 	char t[50];
 	s1="./chromosomes/."+to_string(gen)+".dat";
 	file=fopen(s1.c_str(),"r");
+
+   cout<<"#Generation: "<<gen<<endl;	
 	
 	int c=0;
 	while(fscanf(file,"%s*c",t)!=EOF)
@@ -74,8 +77,8 @@ void GA::fitn(int gen)
      }
      fout.close();
      fclose(file);
-     cmd="sort -rk 2 "+to_str(gen)+".dat -o "+to_str(gen)+".dat";
-     system(cmd); 
+     cmd="sort -rk 2 ./chromosomes/"+to_string(gen)+".dat -o ./chromosomes/"+to_string(gen)+".dat";
+     system(cmd.c_str()); 
 }
 
 /*

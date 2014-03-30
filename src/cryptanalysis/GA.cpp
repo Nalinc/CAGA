@@ -17,8 +17,8 @@ void GA::init()
 
 //CMAP
    cout<<"\n========Encrypting Data Using Chromosome Pool=======";
-	cmap cm(GA::opt,1);
-
+	 cmap cm(GA::opt,1);
+   cout<<"\nOK......Mapping Performed\n";
 //FREQUENCY ANALYSIS
 
 

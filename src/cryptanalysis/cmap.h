@@ -21,19 +21,19 @@ class cmap
    {
    }
    
-   cmap(char str[50],int count)
+   cmap(char str[50],int gen)
    {
- 	string s="./chromosomes/"+to_string(count)+".dat";// 	cout<<s;
+ 	string s="./chromosomes/"+to_string(gen)+".dat";// 	cout<<s;
 	file = fopen (s.c_str(),"r");
 //	file = fopen ("./chromosomes/1.dat","r");
 	
 	if(file==NULL)
 	{cout<<"error\n"; exit(0);}
-
-	file1.open("./data/cipher_list.dat");
+	
+    string s="./data/"+to_string(gen)+"_crypt.dat";
+	file1.open(s.c_str());
     this->str=str;
     mapping();
-    cout<<"\nOK......Mapping Performed\n";
     fclose(file);   
 	file1.close();
    }

@@ -64,7 +64,7 @@ int FitN::tfitness(string file)
 		
     while(fscanf(f3,"%s%d*c",key,&value)!=EOF)
        tD.insert( std::pair<string,int>(key,value));	
-   fclose(f1);
+   fclose(f3);
 
         for (it2=tD.begin(); it2!=tD.end(); ++it2) 
 		{    if(tK.count(it2->first)>0) 

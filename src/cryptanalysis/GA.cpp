@@ -133,6 +133,7 @@ void GA::fitn(int gen)
      fclose(file);
      cmd="sort -rk 2 ./chromosomes/"+to_string(gen)+".dat -o ./chromosomes/"+to_string(gen)+".dat";
      system(cmd.c_str()); 
+     usleep(500);
 }
 
 

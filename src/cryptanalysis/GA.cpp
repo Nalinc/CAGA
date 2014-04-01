@@ -12,14 +12,14 @@ void GA::crossover(int gen)
     fout<<ff[1]<<"\n";
     fout<<ff[2]<<"\n";
     fout<<ff[3]<<"\n";
-    str0=ff[0]//"abcdefghijklmnopqrstuvwxyz"; 
-	for(i=0;i<16;i++)
+    str0=ff[0];//"abcdefghijklmnopqrstuvwxyz"; 
+	for(i=0;i<4;i++)
 	{  	
 	   srand(time(0));
        random_shuffle(str0.begin(), str0.end());
        fout<<str0<<"\n";
 	}
-/*	
+
     str1=ff[1];
 	for(i=0;i<4;i++)
 	{  	
@@ -41,7 +41,7 @@ void GA::crossover(int gen)
        random_shuffle(str3.begin(), str3.end());
        fout<<str3<<"\n";
 	}
-*/
+
     fout.close();
 
 

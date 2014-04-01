@@ -18,7 +18,7 @@ int main(int argc,char **argv)
     cin>>str;
     Affine a;
     a.cipher(str);
-    cout<<"\n\nOK......Training set appended at:\n\t\"<project_root>/TrainingData/TSet.dat\" \n\n";
+    cout<<"\n\nOK......Training set appended at:\n\t\"<project_root>/data/TSet.dat\" \n\n";
 
    if(argc==2 && strcmp(argv[1],"-t")==0)   
       exit(0);
@@ -41,6 +41,9 @@ int main(int argc,char **argv)
    cout<<"\n==========Initializing Genetic Algorithms===========";
 	GA ga;
 //	cout<<pt;
+   for(int k=2;k<10;k++)   
+      GA ga(k);  
+
 /*
    cout<<"\n========Encrypting Data Using Chromosome Pool=======";
 	cmap cm(pt,1); //We'll later move this to GA.cpp

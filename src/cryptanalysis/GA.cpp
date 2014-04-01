@@ -1,4 +1,57 @@
 #include "GA.h"
+void GA::crossover(int gen)
+{
+  //   for(int k=0;k<4;k++)
+    //   cout<<ff[k]<<endl;
+
+    string s2,str0,str1,str2,str3;
+    s2="./chromosomes/."+to_string(gen)+".dat";
+    fout.open(s2.c_str(),ios::out); 
+
+    fout<<ff[0]<<"\n";
+    fout<<ff[1]<<"\n";
+    fout<<ff[2]<<"\n";
+    fout<<ff[3]<<"\n";
+    str0="abcdefghijklmnopqrstuvwxyz"; 
+	for(i=0;i<16;i++)
+	{  	
+	   srand(time(0));
+       random_shuffle(str0.begin(), str0.end());
+       fout<<str0<<"\n";
+	}
+/*	
+    str1=ff[1];
+	for(i=0;i<4;i++)
+	{  	
+	   srand(time(0));
+       random_shuffle(str1.begin(), str1.end());
+       fout<<str1<<"\n";
+	}
+	str2=ff[2];
+	for(i=0;i<4;i++)
+	{  	
+	   srand(time(0));
+       random_shuffle(str2.begin(), str2.end());
+       fout<<str2<<"\n";
+	}
+	str3=ff[3];
+	for(i=0;i<4;i++)
+	{  	
+	   srand(time(0));
+       random_shuffle(str3.begin(), str3.end());
+       fout<<str3<<"\n";
+	}
+*/
+    fout.close();
+
+
+//CMAP
+	 cmap cm(GA::opt,gen);
+//FREQUENCY ANALYSIS
+     calcfreq(gen);
+//CALCULATE FITTNESS
+     fitn(gen);
+}
 
 void GA::init()
 {
@@ -21,10 +74,11 @@ void GA::init()
    cout<<"\nOK......Mapping Performed\n";
 
 //FREQUENCY ANALYSIS
-calcfreq(1);
-
-//CALCULATE FITTNESS
    cout<<"\n=================N-Gram Statistics==================\n";
+calcfreq(1);
+   cout<<"\nOK......Statistical Analysis Performed\n";
+//CALCULATE FITTNESS
+   cout<<"\n=========Evaluating Fitness of Chromosomes==========\n";
 fitn(1);//1->for 1st generation
 
 }
@@ -71,7 +125,7 @@ void GA::fitn(int gen)
 	double u=o.ufitness(p1)*0.1;
 	double b=o.bfitness(p2)*0.3;
 	double t=o.tfitness(p3)*0.6;
-	cout<<"\t\t"<<u<<"\t"<<b<<"\t"<<t<<endl;
+//         cout<<"\t\t"<<u<<"\t"<<b<<"\t"<<t<<endl;
 	fout<<str[i]<<"\t"<<(u+b+t)<<"\n";
 	++chromo;
      }
@@ -80,6 +134,9 @@ void GA::fitn(int gen)
      cmd="sort -rk 2 ./chromosomes/"+to_string(gen)+".dat -o ./chromosomes/"+to_string(gen)+".dat";
      system(cmd.c_str()); 
 }
+
+
+
 
 /*
 int main()

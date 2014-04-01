@@ -12,7 +12,7 @@ void GA::crossover(int gen)
     fout<<ff[1]<<"\n";
     fout<<ff[2]<<"\n";
     fout<<ff[3]<<"\n";
-    str0="abcdefghijklmnopqrstuvwxyz"; 
+    str0=ff[0]//"abcdefghijklmnopqrstuvwxyz"; 
 	for(i=0;i<16;i++)
 	{  	
 	   srand(time(0));

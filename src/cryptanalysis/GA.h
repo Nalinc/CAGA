@@ -6,7 +6,6 @@
 #include <fstream>
 #include <cstdlib>
 #include <iostream>
-#include <unistd.h>
 #include "cmap.h"
 #include "fanalysis.h"
 #include "fitness.h"

@@ -41,7 +41,7 @@ int main(int argc,char **argv)
    cout<<"\n==========Initializing Genetic Algorithms===========";
 	GA ga;
 //	cout<<pt;
-   for(int k=2;k<10;k++)   
+   for(int k=2;k<=100;k++)   
       GA ga(k);  
 
 /*

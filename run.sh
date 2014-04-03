@@ -4,7 +4,7 @@ then
 
 elif [ "$1" == "-GUI" ];
 then
-     echo "not functional atm" #./bin/cs
+    ../CGA-build-desktop-Desktop_Qt_4_8_1_for_GCC__Qt_SDK__Release/CGA
 
 elif [ "$1" == "-f" ];
 then 

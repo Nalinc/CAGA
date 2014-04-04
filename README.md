@@ -1,4 +1,4 @@
 CAGA
 ====
 
-Using Genetic Algorithms in Cryptanalysis
+Cryptanalysis of Affine Ciphers using Genetic Algorithms

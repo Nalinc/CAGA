@@ -11,6 +11,35 @@ char GA::oct[50];
 int main(int argc,char **argv)
 {
 
+//   if(argc==2 && strcmp(argv[1],"-t")==0)   
+//    exit(0);
+
+   if(argc!=1)   
+   {
+     if(argc==2 && strcmp(argv[1],"-t")==0)
+     {
+		cout<<"=====Generating Training Data from cryptosystem=====";
+		string str;
+		cout<<"\nenter a string: ";
+		cin>>str;
+		Affine a;
+		a.cipher(str);
+		cout<<"\n\nOK......Training set appended at:\n\t\"<project_root>/data/TSet.dat\" \n\n";
+      } 
+
+      if(argc==4 && strcmp(argv[1],"-f")==0)
+      {
+      	fanalysis fa(argv[2],argv[3]);
+		cout<<"\n\nOK......Frequency Analysis performed on given sample\n";
+		cout<<"\tUnigrams->\"<project_root>/frequencyanalysis/uni/\"\n";
+		cout<<"\tBiigrams->\"<project_root>/frequencyanalysis/bi/\"\n";
+		cout<<"\tTrigrams->\"<project_root>/frequencyanalysis/tri/\"\n";
+
+	  }
+    }
+   else
+   {
+	   
 //fork affine cipher to generate training data
     cout<<"=====Generating Training Data from cryptosystem=====";
     string str;
@@ -19,9 +48,6 @@ int main(int argc,char **argv)
     Affine a;
     a.cipher(str);
     cout<<"\n\nOK......Training set appended at:\n\t\"<project_root>/data/TSet.dat\" \n\n";
-
-   if(argc==2 && strcmp(argv[1],"-t")==0)   
-      exit(0);
 
 //frequency analysis
    cout<<"===========Performing Frequency Analysis============";
@@ -48,7 +74,7 @@ int main(int argc,char **argv)
    cout<<"\n========Encrypting Data Using Chromosome Pool=======";
 	cmap cm(pt,1); //We'll later move this to GA.cpp
 	*/
-
+  }
 
 
 return 0;

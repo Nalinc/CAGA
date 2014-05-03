@@ -1,0 +1,21 @@
+set terminal png
+
+set output 'known_bigram_plot.png'
+
+set xlabel "Bigram character"
+
+set ylabel "Frequency count"
+
+set title "Frequency count of known bigrams"
+
+set yrange [0:5]
+
+set ytics 1
+
+set boxwidth 0.5
+
+set style fill solid
+
+#plot for [i=1:20] "".i.'.dat' using 2:xticlabels(1) title "frequency"
+
+plot "/dev/stdin" using 2:xticlabels(1) title "frequency" with boxes lc rgb "green"

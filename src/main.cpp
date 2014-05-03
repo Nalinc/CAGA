@@ -29,12 +29,20 @@ int main(int argc,char **argv)
 
       if(argc==4 && strcmp(argv[1],"-f")==0)
       {
-      	fanalysis fa(argv[2],argv[3]);
+        if(strcmp(argv[2],"TSet.dat")==0) 
+       	{ FILE *f;
+      	  f = fopen ("./data/TSet.dat","r");
+          while(fscanf(f,"%s%s*c",GA::opt,GA::oct)!=EOF);
+	      fclose (f);	
+	      fanalysis fa(GA::oct,"file.dat");
+        }
+      	else 
+      	  fanalysis fa(argv[2],argv[3]);
+
 		cout<<"\n\nOK......Frequency Analysis performed on given sample\n";
 		cout<<"\tUnigrams->\"<project_root>/frequencyanalysis/uni/\"\n";
 		cout<<"\tBiigrams->\"<project_root>/frequencyanalysis/bi/\"\n";
 		cout<<"\tTrigrams->\"<project_root>/frequencyanalysis/tri/\"\n";
-
 	  }
     }
    else
@@ -65,9 +73,9 @@ int main(int argc,char **argv)
   
 //fork GA to generate test data
    cout<<"\n==========Initializing Genetic Algorithms===========";
-	GA ga;
+   GA ga;
 //	cout<<pt;
-   for(int k=2;k<=500;k++)   
+   for(int k=2;k<=100;k++)   
       GA ga(k);  
 
 /*

@@ -1,0 +1,19 @@
+set terminal png
+
+set output 'fitness_plot.png'
+
+set xlabel "Generation number"
+
+set xrange[0:100]
+
+set xtics 0,10,100
+
+set ylabel "Fitness value"
+
+set yrange[0:1]
+
+set ytics 0,0.1,1
+
+set title "Variation of fitness value with generation number"
+
+plot  "/dev/stdin" using 1:2 title "curve" with lines

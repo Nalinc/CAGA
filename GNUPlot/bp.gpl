@@ -1,6 +1,6 @@
 set terminal png
 
-set output 'known_bigram_plot.png'
+set output 'bi_plot.png'
 
 set xlabel "Bigram character"
 

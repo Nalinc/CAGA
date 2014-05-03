@@ -10,20 +10,24 @@ elif [ "$1" == "-f" ];
 then 
      ./bin/main -f $2 $3
 
-elif [ "$1" == "-t" ];
-then
-     ./bin/main -t
-
-elif [ "$1" == "-p" ];
+elif [ "$1" == "-p" -a "$2" == "" ];
 then
      
-     gnuplot ./GNUPlot/fitp.gpl < ./chromosomes/$2
+     gnuplot ./GNUPlot/fitp.gpl < ./src/fitness.dat
+     eog fitness_plot.png
+
+elif [ "$1" == "-p" -a "$2" != "" ];
+then 
      gnuplot ./GNUPlot/up.gpl   < ./frequencyanalysis/uni/$2
      gnuplot ./GNUPlot/bp.gpl   < ./frequencyanalysis/bi/$2
      gnuplot ./GNUPlot/tp.gpl   < ./frequencyanalysis/tri/$2
-     #eog fitness_plot.png
+     eog uni_plot.png  
+
+elif [ "$1" == "-t" ];
+then
+     ./bin/main -t
     
-elif [ "$1" == "-help" -o $1="" ];
+elif [ "$1" == "" ];
 then 
     echo -e "\n#CheatSheet"
     echo -e "#Cryptanalysis of Substitution Ciphers using Genetic Algorithms\n"

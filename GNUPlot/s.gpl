@@ -1,0 +1,27 @@
+# set terminal pngcairo  transparent enhanced font "arial,10" fontscale 1.0 size 500, 350 
+# set output 'layout.4.png'
+set boxwidth 0.8 absolute
+set style fill   solid 1.00 border
+set format y "    "
+set key inside right top vertical Right noreverse noenhanced autotitles columnhead nobox
+set key noinvert samplen 1 spacing 1 width 0 height 0 
+set style histogram columnstacked title  offset character 0, 0, 0
+set style data boxes
+set xtics border in scale 0,0 nomirror norotate  offset character 0, 0, 0 autojustify
+set xtics  norangelimit font ",8"
+set xtics   ()
+set ytics border in scale 0,0 mirror norotate  offset character 0, 0, 0 autojustify
+set ytics autofreq  norangelimit font ",8"
+set ztics border in scale 0,0 nomirror norotate  offset character 0, 0, 0 autojustify
+set ztics autofreq  norangelimit font ",8"
+set cbtics border in scale 0,0 mirror norotate  offset character 0, 0, 0 autojustify
+set cbtics autofreq  norangelimit font ",8"
+set rtics axis in scale 0,0 nomirror norotate  offset character 0, 0, 0 autojustify
+set rtics autofreq  norangelimit font ",8"
+set xlabel "Immigration to U.S. by Decade" 
+set yrange [ 0.00000 : 800000. ] noreverse nowriteback
+set lmargin  3
+set bmargin  0
+set rmargin  3
+set tmargin  0
+plot 'immigration.dat' using 21:xtic(1) lt 4

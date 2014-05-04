@@ -1,6 +1,6 @@
 set terminal png
 
-set output 'tri_plot.png'
+set output './frequencyanalysis/tri_plot.png'
 
 set xlabel "Trigram character"
 

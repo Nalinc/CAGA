@@ -1,6 +1,6 @@
 set terminal png
 
-set output 'uni_plot.png'
+set output './frequencyanalysis/uni_plot.png'
 
 set xlabel "Unigram character"
 

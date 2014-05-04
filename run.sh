@@ -12,16 +12,17 @@ then
 
 elif [ "$1" == "-p" -a "$2" == "" ];
 then
-     
+
+     ./src/script.sh     
      gnuplot ./GNUPlot/fitp.gpl < ./src/fitness.dat
-     eog fitness_plot.png
+     #eog fitness_plot.png
 
 elif [ "$1" == "-p" -a "$2" != "" ];
 then 
      gnuplot ./GNUPlot/up.gpl   < ./frequencyanalysis/uni/$2
      gnuplot ./GNUPlot/bp.gpl   < ./frequencyanalysis/bi/$2
      gnuplot ./GNUPlot/tp.gpl   < ./frequencyanalysis/tri/$2
-     eog uni_plot.png  
+     eog ./frequencyanalysis/uni_plot.png  
 
 elif [ "$1" == "-t" ];
 then

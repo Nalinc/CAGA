@@ -3,7 +3,7 @@ echo -e "========Fetching system information========"
    uname -a
 echo -e "......................................................OK"
 echo -e "\n===========Checking dependencies==========="
-   g++ --version
+   g++ --version | head -1
 echo -e "......................................................OK"
 echo -e "\n=========Checking necessary files=========="
 if [ -d ./bin ];

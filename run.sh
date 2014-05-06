@@ -15,18 +15,18 @@ then
 
      ./src/script.sh     
      gnuplot ./GNUPlot/fitp.gpl < ./src/fitness.dat
-     #eog fitness_plot.png
-
+     nohup eog fitness_plot.png
+ 
 elif [ "$1" == "-p" -a "$2" != "" ];
 then 
      gnuplot ./GNUPlot/up.gpl   < ./frequencyanalysis/uni/$2
      gnuplot ./GNUPlot/bp.gpl   < ./frequencyanalysis/bi/$2
      gnuplot ./GNUPlot/tp.gpl   < ./frequencyanalysis/tri/$2
-     eog ./frequencyanalysis/uni_plot.png  
+     nohup eog ./frequencyanalysis/uni_plot.png  
 
 elif [ "$1" == "-t" ];
 then
-     ./bin/main -t
+     ./bin/main -t $2
 
 elif [ "$1" == "-ga" ];
 then

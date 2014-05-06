@@ -16,19 +16,19 @@ int main(int argc,char **argv)
 
    if(argc!=1)   
    {
-     if(argc==2 && strcmp(argv[1],"-t")==0)
+     if(argc==3 && strcmp(argv[1],"-t")==0)
      {
 		cout<<"=====Generating Training Data from cryptosystem=====";
-		string str;
-		cout<<"\nenter a string: ";
-		cin>>str;
+		string str=argv[2];
 		Affine a;
 		a.cipher(str);
 		cout<<"\n\nOK......Training set appended at:\n\t\"<project_root>/data/TSet.dat\" \n\n";
       } 
+      
 
-      if(argc==4 && strcmp(argv[1],"-f")==0)
+       if(argc==4 && strcmp(argv[1],"-f")==0)
       {
+		  cout<<argv[2]<<"\t"<<argv[3]<<endl;
         if(strcmp(argv[2],"TSet.dat")==0) 
        	{ FILE *f;
       	  f = fopen ("./data/TSet.dat","r");

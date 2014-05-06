@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed Apr 2 00:11:08 2014
+** Created: Tue May 6 22:08:03 2014
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -34,7 +34,6 @@ public:
     QPushButton *btn_cs;
     QPushButton *btn_ca;
     QPushButton *btn_plots;
-    QPushButton *btn_cfg;
     QMenuBar *menuBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -69,10 +68,7 @@ public:
         btn_ca->setGeometry(QRect(660, 260, 121, 31));
         btn_plots = new QPushButton(centralWidget);
         btn_plots->setObjectName(QString::fromUtf8("btn_plots"));
-        btn_plots->setGeometry(QRect(660, 150, 121, 31));
-        btn_cfg = new QPushButton(centralWidget);
-        btn_cfg->setObjectName(QString::fromUtf8("btn_cfg"));
-        btn_cfg->setGeometry(QRect(660, 104, 121, 31));
+        btn_plots->setGeometry(QRect(660, 120, 121, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -94,7 +90,6 @@ public:
         btn_cs->setText(QApplication::translate("MainWindow", "Cryptosystem", 0, QApplication::UnicodeUTF8));
         btn_ca->setText(QApplication::translate("MainWindow", "Cryptanalysis", 0, QApplication::UnicodeUTF8));
         btn_plots->setText(QApplication::translate("MainWindow", "Statistics", 0, QApplication::UnicodeUTF8));
-        btn_cfg->setText(QApplication::translate("MainWindow", "Configure", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

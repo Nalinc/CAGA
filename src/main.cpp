@@ -46,7 +46,12 @@ int main(int argc,char **argv)
 	  }
 	  
      if(argc==2 && strcmp(argv[1],"-ga")==0)
-     {   cout<<"\n==========Initializing Genetic Algorithms===========";
+     {   
+ 		 FILE *f;
+         f = fopen ("./data/TSet.dat","r");
+		 while(fscanf(f,"%s%s*c",GA::opt,GA::oct)!=EOF);
+		 fclose (f);	
+		 cout<<"\n==========Initializing Genetic Algorithms===========";
  	     GA ga;
 		 for(int k=2;k<=100;k++)   
 		   GA ga(k);  

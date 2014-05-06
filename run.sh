@@ -27,7 +27,11 @@ then
 elif [ "$1" == "-t" ];
 then
      ./bin/main -t
-    
+
+elif [ "$1" == "-ga" ];
+then
+     ./bin/main -ga    
+
 elif [ "$1" == "" ];
 then 
     echo -e "\n#CheatSheet"

@@ -1,36 +1,41 @@
 
-if [ ! -z "ls ./data/*" ]; 
-then echo "Directory Already Empty"; 
+if [ ! -f ./data/* ]; 
+then 
+  echo "Directory Already Empty"; 
 else
-rm ./data/*
+  rm ./data/*
 fi
 
-if [ ! -z "ls ./chromosomes/*.dat" ]; 
-then echo "Directory Already Empty";
+if [ ! -f ./chromosomes/*.dat ]; 
+then 
+  echo "Directory Already Empty";
 else
-rm ./chromosomes/*.dat
+  rm ./chromosomes/*.dat
 fi
 
-if [ ! -z "ls ./chromosomes/.*.dat" ]; 
-then echo "Directory Already Empty";
+if [ ! -f ./chromosomes/.*.dat ]; 
+then 
+  echo "Directory Already Empty";
 else
-rm ./chromosomes/.*.dat
+  rm ./chromosomes/.*.dat
 fi
 
-if [ ! -z "ls ./frequencyanalysis/uni/*" ]; 
+if [ ! -f ./frequencyanalysis/uni/* ]; 
 then echo "Directory Already Empty";
 else
-rm ./frequencyanalysis/uni/*
+  rm ./frequencyanalysis/uni/*
 fi
 
-if [ ! -z "ls ./frequencyanalysis/bi/*" ]; 
-then echo "Directory Already Empty";
+if [ ! -f  ./frequencyanalysis/bi/* ]; 
+then 
+  echo "Directory Already Empty";
 else
-rm ./frequencyanalysis/bi/*
+  rm ./frequencyanalysis/bi/*
 fi
 
-if [ ! -z "ls ./frequencyanalysis/tri/*" ]; 
-then echo "Directory Already Empty";
+if [ ! -f   ./frequencyanalysis/tri/* ]; 
+then 
+  echo "Directory Already Empty";
 else
 rm ./frequencyanalysis/tri/*
 fi

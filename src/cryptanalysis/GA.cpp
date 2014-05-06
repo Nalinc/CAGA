@@ -4,15 +4,49 @@ void GA::crossover(int gen)
   //   for(int k=0;k<4;k++)
     //   cout<<ff[k]<<endl;
 
-    string s2,str0,str1,str2,str3;
+
+
+    string s2,str0,temp;
     s2="./chromosomes/."+to_string(gen)+".dat";
     fout.open(s2.c_str(),ios::out); 
-
-    fout<<ff[0]<<"\n";
+    if(gen==80)//mqu
+      ff[0]="insxchqrwbgluvafkpmzejotyd";
+      //     insxczorwbglmvafkpuhejqtyd	
+      
+      //     insxch-rwbgl-vafkp-zejotyd
+    string mk="insxchmrwbglqvafkpuzejotyd";
+    //         insxczorwbglmvafkpuhejqtyd	
+    //         insxthyrwfolbvmqkpuzgjecad 
+    //         insxztmrwgklqvafhpeoujbcyd
+    //         tnsxcimrwbglqvafkpuzedojyh
+     //        onsxchmrwiglqvafkpuzejbtyd
+     for(int itr=0;itr<4;itr++)
+    {   temp="";
+		for(int i=0;i<26;i++)
+			 if(ff[itr][i]!=mk[i])
+			 {   temp+=ff[itr][i];
+				 ff[itr][i]='-';    
+			 } 
+		
+		for(int k=0;k<4;k++)
+		{ srand(time(0));
+		  random_shuffle(temp.begin(), temp.end()); 
+		  int c=0;str0=ff[itr];
+		  for(i=0;i<26;i++)  	
+			 if(str0[i]=='-')
+			 {  str0[i]=temp[c];c++;}        
+		  fout<<str0<<"\n";	
+		} 
+		 
+    }  
+    
+        fout<<ff[0]<<"\n";
     fout<<ff[1]<<"\n";
     fout<<ff[2]<<"\n";
     fout<<ff[3]<<"\n";
-    //"abcdefghijklmnopqrstuvwxyz"; 
+
+    fout.close();
+/*
 	str0=ff[0];
 	for(i=0;i<4;i++)
 	{  	
@@ -43,7 +77,7 @@ void GA::crossover(int gen)
 	}
 
     fout.close();
-
+*/
 
 //CMAP
 	 cmap cm(GA::opt,gen);
@@ -131,7 +165,7 @@ void GA::fitn(int gen)
      }
      fout.close();
      fclose(file);
-     cmd="sort -rk 2 ./chromosomes/"+to_string(gen)+".dat -o ./chromosomes/"+to_string(gen)+".dat";
+     cmd="sort -nrk2 ./chromosomes/"+to_string(gen)+".dat -o ./chromosomes/"+to_string(gen)+".dat";
      system(cmd.c_str()); 
 
 }
@@ -146,3 +180,4 @@ int main()
 	ga.init();
 }
 */
+

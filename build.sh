@@ -1,3 +1,4 @@
+./clean.sh
 echo -e "========Fetching system information========"
    uname -a
 echo -e "......................................................OK"

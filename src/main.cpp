@@ -44,6 +44,15 @@ int main(int argc,char **argv)
 		cout<<"\tBiigrams->\"<project_root>/frequencyanalysis/bi/\"\n";
 		cout<<"\tTrigrams->\"<project_root>/frequencyanalysis/tri/\"\n";
 	  }
+	  
+     if(argc==2 && strcmp(argv[1],"-ga")==0)
+     {   cout<<"\n==========Initializing Genetic Algorithms===========";
+ 	     GA ga;
+		 for(int k=2;k<=100;k++)   
+		   GA ga(k);  
+      } 
+
+	  
     }
    else
    {

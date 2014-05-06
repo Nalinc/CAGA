@@ -10,9 +10,9 @@ set xtics 0,10,100
 
 set ylabel "Fitness value"
 
-set yrange[0:1]
+#set yrange[0:1]
 
-set ytics 0,0.1,1
+#set ytics 0,0.1,1
 
 set title "Variation of fitness value with generation number"
 

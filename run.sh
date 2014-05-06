@@ -36,13 +36,14 @@ elif [ "$1" == "" ];
 then 
     echo -e "\n#CheatSheet"
     echo -e "#Cryptanalysis of Substitution Ciphers using Genetic Algorithms\n"
-	echo "#COMMAND LINE USAGE:"
-	echo -e "\t ./run.sh \t\t\t\t:Displays usage/help section"
-	echo -e "\t ./run.sh -CLI\t\t\t\t:Enables CLI Mode"	
+    echo "#COMMAND LINE USAGE:"
+    echo -e "\t ./run.sh \t\t\t\t:Displays usage/help section"
+    echo -e "\t ./run.sh -CLI\t\t\t\t:Enables CLI Mode"	
     echo -e "\t ./run.sh -GUI\t\t\t\t:Enables GUI Mode"
-	echo -e "\t ./run.sh -t\t\t\t\t:Generate training data"
-	echo -e "\t ./run.sh -f <text> <filename>\t\t:Perform Frequency Analysis"
-	echo -e "\t\t\t\t\t\t Normal Usage <text>=TSet.dat && <filename>=file.dat"
+    echo -e "\t ./run.sh -t\t\t\t\t:Generate training data"
+    echo -e "\t ./run.sh -f <text> <filename>\t\t:Perform Frequency Analysis"
+    echo -e "\t\t\t\t\t\t Normal Usage <text>=TSet.dat && <filename>=file.dat"
+    echo -e "\t ./run.sh -ga\t\t\t\t:Initiates GA Module"
 
 else
   echo "err..invalid usage"

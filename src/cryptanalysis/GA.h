@@ -40,8 +40,13 @@ public:
        {cout<<"error\n";exit(0);}
        //read and get fittest 4
        int j=0;
+       double prob = ((double) rand() / (RAND_MAX));
+       int flag=1;
        while(fscanf(file,"%s%s*c",tmp,tmp2)!=EOF)
-       { ff[j]=tmp;++j;
+       { 
+		 if(prob>0.7&&flag)
+		 {flag=0;continue;}  
+		 ff[j]=tmp;++j; 
          if(j==4) break;         
        }
        //close file

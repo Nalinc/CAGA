@@ -44,6 +44,8 @@ then
     echo -e "\t ./run.sh -f <text> <filename>\t\t:Perform Frequency Analysis"
     echo -e "\t\t\t\t\t\t Normal Usage <text>=TSet.dat && <filename>=file.dat"
     echo -e "\t ./run.sh -ga\t\t\t\t:Initiates GA Module"
+    echo -e "\t ./run.sh -p\t\t\t\t:Plot Fitness Graph"
+    echo -e "\t ./run.sh -p <n>.dat \t\t\t:Plot n-gram Statistics for n'th chromosome"
 
 else
   echo "err..invalid usage"

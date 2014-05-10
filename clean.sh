@@ -1,50 +1,51 @@
 
-if [ ! -f ./data/* ]; 
+if [ -f ./data/* ]; 
 then 
-  echo "Removing Files"; 
-else
   rm ./data/*
+else
+  echo "Removing Files"; 
 fi
 
-if [ ! -f ./chromosomes/*.dat ]; 
+if [ -f ./chromosomes/*.dat ]; 
 then 
-  echo "Removing Files";
-else
   rm ./chromosomes/*.dat
+else
+  echo "Removing Files";
 fi
 
-if [ ! -f ./chromosomes/.*.dat ]; 
+if [ -f ./chromosomes/.*.dat ]; 
 then 
-  echo "Removing Files";
-else
   rm ./chromosomes/.*.dat
+else
+  echo "Removing Files";
 fi
 
-if [ ! -f ./frequencyanalysis/uni/* ]; 
-then echo "Removing Files";
-else
+if [ -f ./frequencyanalysis/uni/* ]; 
+then 
   rm ./frequencyanalysis/uni/*
+else
+  echo "Removing Files";
 fi
 
-if [ ! -f  ./frequencyanalysis/bi/* ]; 
+if [ -f  ./frequencyanalysis/bi/* ]; 
 then 
-  echo "Removing Files";
-else
   rm ./frequencyanalysis/bi/*
-fi
-
-if [ ! -f   ./frequencyanalysis/tri/* ]; 
-then 
+else
   echo "Removing Files";
-else
-  rm ./frequencyanalysis/tri/*
 fi
 
-if [ ! -f ./frequencyanalysis/*.png ];
-then
-   echo "Removing Files"
+if [ -f   ./frequencyanalysis/tri/* ]; 
+then 
+  rm ./frequencyanalysis/tri/*
 else
+  echo "Removing Files";
+fi
+
+if [ -f ./frequencyanalysis/*.png ];
+then
   rm ./frequencyanalysis/*.png
+else
+  echo "Removing Files";
 fi
 
 

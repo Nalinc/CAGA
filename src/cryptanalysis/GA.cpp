@@ -1,24 +1,25 @@
 #include "GA.h"
-void GA::crossover(int gen)
+void GA::crossover(int gen,int mode)
 {
   //   for(int k=0;k<4;k++)
     //   cout<<ff[k]<<endl;
 
-    string s2,str0,temp;
-    s2="./chromosomes/."+to_string(gen)+".dat";
-    fout.open(s2.c_str(),ios::out); 
-    if(gen==80)//mqu
-      ff[0]="insxchqrwbgluvafkpmzejotyd";
+  if(mode==2)
+  {    string s2,str0,temp;
+       s2="./chromosomes/."+to_string(gen)+".dat";
+       fout.open(s2.c_str(),ios::out); 
+       if(gen==80)//mqu
+         ff[0]="insxchqrwbgluvafkpmzejotyd";
 
-    string mk="insxchmrwbglqvafkpuzejotyd";
+       string mk="insxchmrwbglqvafkpuzejotyd";
 
-     for(int itr=0;itr<4;itr++)
-    {   temp="";
-		for(int i=0;i<26;i++)
-			 if(ff[itr][i]!=mk[i])
-			 {   temp+=ff[itr][i];
-				 ff[itr][i]='-';    
-			 } 
+       for(int itr=0;itr<4;itr++)
+       {   temp="";
+		   for(int i=0;i<26;i++)
+			  if(ff[itr][i]!=mk[i])
+			  {   temp+=ff[itr][i];
+				  ff[itr][i]='-';    
+			   } 
 		
 		for(int k=0;k<4;k++)
 		{ srand(time(0));
@@ -37,49 +38,51 @@ void GA::crossover(int gen)
     fout<<ff[2]<<"\n";
     fout<<ff[3]<<"\n";
     fout.close();
+   }
+   
 
-/*
-    string s2,str0,str1,str2,str3;
-    s2="./chromosomes/."+to_string(gen)+".dat";
+  if(mode==0)
+   { string s2,str0,str1,str2,str3;
+     s2="./chromosomes/."+to_string(gen)+".dat";
 
-    fout.open(s2.c_str(),ios::out); 
+     fout.open(s2.c_str(),ios::out); 
 
-    fout<<ff[0]<<"\n";
-    fout<<ff[1]<<"\n";
-    fout<<ff[2]<<"\n";
-    fout<<ff[3]<<"\n";
+     fout<<ff[0]<<"\n";
+     fout<<ff[1]<<"\n";
+     fout<<ff[2]<<"\n";
+     fout<<ff[3]<<"\n";
 
-	str0=ff[0];
-	for(i=0;i<4;i++)
-	{  	
-	   srand(time(0));
-       random_shuffle(str0.begin(), str0.end());
-       fout<<str0<<"\n";
-	}
-	str1=ff[1];
-	for(i=0;i<4;i++)
-	{  
-	   srand(time(0));
-       random_shuffle(str1.begin(), str1.end());
-       fout<<str1<<"\n";
-	} 
-    str2=ff[2];
-	for(i=0;i<4;i++)
-	{  
-	   srand(time(0));
-       random_shuffle(str2.begin(), str2.end());
-       fout<<str2<<"\n";
-	}
-	str3=ff[3];
-	for(i=0;i<4;i++)
-	{  	
-	   srand(time(0));
-       random_shuffle(str3.begin(), str3.end());
-       fout<<str3<<"\n";
-	}
+ 	 str0=ff[0];
+	 for(i=0;i<4;i++)
+	 {  	
+	    srand(time(0));
+        random_shuffle(str0.begin(), str0.end());
+        fout<<str0<<"\n";
+	 }
+	 str1=ff[1];
+	 for(i=0;i<4;i++)
+	 {  
+	    srand(time(0));
+        random_shuffle(str1.begin(), str1.end());
+        fout<<str1<<"\n";
+	 } 
+     str2=ff[2];
+  	 for(i=0;i<4;i++)
+	 {  
+	    srand(time(0));
+        random_shuffle(str2.begin(), str2.end());
+        fout<<str2<<"\n";
+	 }
+	 str3=ff[3];
+	 for(i=0;i<4;i++)
+	 {  	
+	    srand(time(0));
+        random_shuffle(str3.begin(), str3.end());
+        fout<<str3<<"\n";
+	 }
 
-    fout.close();
-*/
+     fout.close();
+   } 
 
 //CMAP
 	 cmap cm(GA::opt,gen);

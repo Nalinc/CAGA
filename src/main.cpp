@@ -46,7 +46,7 @@ int main(int argc,char **argv)
 	  }
 	  
      if(argc==2 && strcmp(argv[1],"-ga")==0)
-     {   
+     {   int mode=0;
  		 FILE *f;
          f = fopen ("./data/TSet.dat","r");
 		 while(fscanf(f,"%s%s*c",GA::opt,GA::oct)!=EOF);
@@ -54,8 +54,21 @@ int main(int argc,char **argv)
 		 cout<<"\n==========Initializing Genetic Algorithms===========";
  	     GA ga;
 		 for(int k=2;k<=100;k++)   
-		   GA ga(k);  
+		   GA ga(k,mode);  
       } 
+
+      if(argc==2 && strcmp(argv[1],"-sa")==0)
+     {   int mode=1;
+ 		 FILE *f;
+         f = fopen ("./data/TSet.dat","r");
+		 while(fscanf(f,"%s%s*c",GA::opt,GA::oct)!=EOF);
+		 fclose (f);	
+		 cout<<"\n==========Initializing Genetic Algorithms===========";
+ 	     GA ga;
+		 for(int k=2;k<=100;k++)   
+		   GA ga(k,mode);  
+      } 
+
 
 	  
     }
@@ -87,10 +100,11 @@ int main(int argc,char **argv)
   
 //fork GA to generate test data
    cout<<"\n==========Initializing Genetic Algorithms===========";
+   int mode=2;
    GA ga;
 //	cout<<pt;
    for(int k=2;k<=100;k++)   
-      GA ga(k);  
+      GA ga(k,mode);  
 
 /*
    cout<<"\n========Encrypting Data Using Chromosome Pool=======";

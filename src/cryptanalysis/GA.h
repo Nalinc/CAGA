@@ -30,7 +30,7 @@ public:
 	 str="abcdefghijklmnopqrstuvwxyz"; 
      init();
    }
-   GA(int gen)
+   GA(int gen,int mode)
    {
        //open gen-1 file
 	   string s1;
@@ -53,10 +53,10 @@ public:
        fclose(file);
 
        //call crossover()
-       crossover(gen);
+       crossover(gen,mode);
    }
    void init();
-   void crossover(int gen);
+   void crossover(int gen,int mode);
    void fitn(int gen);
    void calcfreq(int gen);
    ~GA()

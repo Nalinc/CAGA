@@ -40,7 +40,11 @@ public:
        {cout<<"error\n";exit(0);}
        //read and get fittest 4
        int j=0;
-       double prob = ((double) rand() / (RAND_MAX));
+       
+       double prob=0;
+       if(mode==2 || mode==1)
+         prob = ((double) rand() / (RAND_MAX));
+       
        int flag=1;
        while(fscanf(file,"%s%s*c",tmp,tmp2)!=EOF)
        { 
@@ -57,6 +61,8 @@ public:
    }
    void init();
    void crossover(int gen,int mode);
+   string replace(string t1, string t2);
+   string cross(string s1, string s2);
    void fitn(int gen);
    void calcfreq(int gen);
    ~GA()

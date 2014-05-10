@@ -32,6 +32,11 @@ elif [ "$1" == "-ga" ];
 then
      ./bin/main -ga    
 
+elif [ "$1" == "-sa" ];
+then
+     ./bin/main -sa
+
+
 elif [ "$1" == "" ];
 then 
     echo -e "\n#CheatSheet"

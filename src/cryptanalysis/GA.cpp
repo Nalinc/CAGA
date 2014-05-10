@@ -4,7 +4,7 @@ void GA::crossover(int gen,int mode)
   //   for(int k=0;k<4;k++)
     //   cout<<ff[k]<<endl;
 
-  if(mode==2)
+  if(mode==2)  //Hybrid Approach
   {    string s2,str0,temp;
        s2="./chromosomes/."+to_string(gen)+".dat";
        fout.open(s2.c_str(),ios::out); 
@@ -39,10 +39,10 @@ void GA::crossover(int gen,int mode)
     fout<<ff[3]<<"\n";
     fout.close();
    }
-   
 
-  if(mode==0)  //Mahesh's work
-   { string s2,str0,str1,str2,str3;
+  if(mode==1)  //Only SA,
+   { 
+	 string s2,str0,str1,str2,str3;
      s2="./chromosomes/."+to_string(gen)+".dat";
 
      fout.open(s2.c_str(),ios::out); 
@@ -83,6 +83,83 @@ void GA::crossover(int gen,int mode)
 
      fout.close();
    } 
+   
+  if(mode==0) //Only GA, Mahesh's Work
+  {
+  string par1, par2, temp_l1, temp_l2, temp_r1, temp_r2, c1, c2, c3, c4,s2,str0,str1;
+     s2="./chromosomes/."+to_string(gen)+".dat";
+
+     fout.open(s2.c_str(),ios::out); 
+
+     fout<<ff[0]<<"\n";
+     fout<<ff[1]<<"\n";
+     fout<<ff[2]<<"\n";
+     fout<<ff[3]<<"\n";
+
+//----
+// 0-1   0-2  0-3  1-2
+ //CROSSOVER
+  for(int i = 0;i < 1; i++)
+  {
+     for(int j = i+1;i+j < 3; j++)
+     { 
+  	   par1=ff[i];
+	   par2=ff[j]; 
+	   temp_l1 = "";
+	   temp_l2 = "";
+	   temp_r1 = "";
+	   temp_r2 = "";
+	   
+//	   cout<<"\n\n Reading lines "<<i+1<<" and "<<j+1;	 
+	   	 
+       temp_l1.append(par1, 0, 15);
+       temp_r1.append(par1, 15, 11);
+//	   cout<<"\ntemp_l1 (P1L) : "<<temp_l1;	
+//       cout<<"\ntemp_r1 (P1R) : "<<temp_r1;
+     
+       
+       temp_l2.append(par2, 0, 15);   
+	   temp_r2.append(par2, 15, 11);
+//	   cout<<"\ntemp_l2 (P2L) : "<<temp_l2;	
+//	   cout<<"\ntemp_r2 (P2R) : "<<temp_r2;										
+       
+       
+       c1 = cross(temp_l1, temp_r2);       
+       c2 = cross(temp_l2, temp_r1);
+       c3 = cross(temp_r2, temp_l1);
+       c4 = cross(temp_r1, temp_l2);
+            
+       fout<<c1<<"\n";
+       fout<<c2<<"\n";
+       fout<<c3<<"\n";
+       fout<<c4<<"\n";
+       
+	 }
+  }	 
+  
+//MUTATION in parents ff[0] and ff[1]
+	 str0=ff[0];
+	 for(int i=0;i<4;i++)
+	 {  	
+	    srand(time(0));
+        random_shuffle(str0.begin(), str0.end());
+        fout<<str0<<"\n";
+	 }
+
+	 str1=ff[1];
+	 for(i=0;i<4;i++)
+	 {  
+	    srand(time(0));
+        random_shuffle(str1.begin(), str1.end());
+        fout<<str1<<"\n";
+	 } 
+	 
+
+
+//----
+    fout.close();
+  } 
+
 
 //CMAP
 	 cmap cm(GA::opt,gen);
@@ -173,6 +250,44 @@ void GA::fitn(int gen)
      cmd="sort -nrk2 ./chromosomes/"+to_string(gen)+".dat -o ./chromosomes/"+to_string(gen)+".dat";
      system(cmd.c_str()); 
 
+}
+
+string GA::cross(string s1, string s2)
+{
+	bool flag;
+	int j;
+	int k = 0;
+	string t = "abcdefghijklmnopqrstuvwxyz";
+	t = replace(t, s1);
+	t = replace(t, s2);
+	   for(int i = 0; i< s1.length(); i++)
+	   {
+		  flag = true;
+		  j = 0;
+		  while(flag && j<s1.length())
+		  {
+			if (s1[j] == s2[i]) 
+			{
+				flag = false;
+				break;
+			}
+			j++;
+		  }
+		  if(!flag)
+		  {
+			while(t[k] == '#')
+			   k++;
+			s2[i] = t[k++];
+		  }
+	   }       
+       return s1+s2;
+}
+
+string GA::replace(string t1, string t2)
+{
+	for (int i = 0; i< t2.length(); i++)
+		t1[t2[i]-97] = '#';
+	return t1;
 }
 
 

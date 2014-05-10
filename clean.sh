@@ -1,4 +1,3 @@
-
 if [ -f ./data/* ]; 
 then 
   rm ./data/*

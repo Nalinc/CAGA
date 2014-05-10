@@ -41,7 +41,7 @@ void GA::crossover(int gen,int mode)
    }
    
 
-  if(mode==0)
+  if(mode==0)  //Mahesh's work
    { string s2,str0,str1,str2,str3;
      s2="./chromosomes/."+to_string(gen)+".dat";
 

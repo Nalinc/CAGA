@@ -8,16 +8,21 @@
 * **Date of last modification:** 11/05/2014
 ====
 ### Setting up ###
-#Configuring Binaries
+###Configuring Binaries###
 `./config.sh`
 
-#Clean Directory Structure[Optional]
+###Clean Directory Structure[Optional]###
 `./clean.sh`
 
-#Build Project
+###Build Project###
 `./buid.sh`
 
-#Execute project and plot graphs
+###view individual plots###
+```bash
+./run.sh -p                      #Diaplay fitness plot
+./run.sh -p <text> <filename>    #Display n-gram analysis 
+```
+###Execute project and plot graphs###
 ```bash
 ./run.sh         #displays Help
 ./run.sh -CLI    #Runs on CLI in hybrid mode
@@ -26,10 +31,5 @@
 ./run.sh -GUI    #Runs on GUI on GA mode
 ```
 
-#view individual plots
-```bash
-./run.sh -p                      #Diaplay fitness plot
-./run.sh -p <text> <filename>    #Display n-gram analysis 
-```
 
 ----------------------------------------

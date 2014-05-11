@@ -4,86 +4,7 @@ void GA::crossover(int gen,int mode)
   //   for(int k=0;k<4;k++)
     //   cout<<ff[k]<<endl;
 
-  if(mode==2)  //Hybrid Approach
-  {    string s2,str0,temp;
-       s2="./chromosomes/."+to_string(gen)+".dat";
-       fout.open(s2.c_str(),ios::out); 
-       if(gen==80)//mqu
-         ff[0]="insxchqrwbgluvafkpmzejotyd";
-
-       string mk="insxchmrwbglqvafkpuzejotyd";
-
-       for(int itr=0;itr<4;itr++)
-       {   temp="";
-		   for(int i=0;i<26;i++)
-			  if(ff[itr][i]!=mk[i])
-			  {   temp+=ff[itr][i];
-				  ff[itr][i]='-';    
-			   } 
-		
-		for(int k=0;k<4;k++)
-		{ srand(time(0));
-		  random_shuffle(temp.begin(), temp.end()); 
-		  int c=0;str0=ff[itr];
-		  for(i=0;i<26;i++)  	
-			 if(str0[i]=='-')
-			 {  str0[i]=temp[c];c++;}        
-		  fout<<str0<<"\n";	
-		} 
-		 
-    }  
-    
-    fout<<ff[0]<<"\n";
-    fout<<ff[1]<<"\n";
-    fout<<ff[2]<<"\n";
-    fout<<ff[3]<<"\n";
-    fout.close();
-   }
-
-  if(mode==1)  //Only SA,
-   { 
-	 string s2,str0,str1,str2,str3;
-     s2="./chromosomes/."+to_string(gen)+".dat";
-
-     fout.open(s2.c_str(),ios::out); 
-
-     fout<<ff[0]<<"\n";
-     fout<<ff[1]<<"\n";
-     fout<<ff[2]<<"\n";
-     fout<<ff[3]<<"\n";
-
- 	 str0=ff[0];
-	 for(i=0;i<4;i++)
-	 {  	
-	    srand(time(0));
-        random_shuffle(str0.begin(), str0.end());
-        fout<<str0<<"\n";
-	 }
-	 str1=ff[1];
-	 for(i=0;i<4;i++)
-	 {  
-	    srand(time(0));
-        random_shuffle(str1.begin(), str1.end());
-        fout<<str1<<"\n";
-	 } 
-     str2=ff[2];
-  	 for(i=0;i<4;i++)
-	 {  
-	    srand(time(0));
-        random_shuffle(str2.begin(), str2.end());
-        fout<<str2<<"\n";
-	 }
-	 str3=ff[3];
-	 for(i=0;i<4;i++)
-	 {  	
-	    srand(time(0));
-        random_shuffle(str3.begin(), str3.end());
-        fout<<str3<<"\n";
-	 }
-
-     fout.close();
-   } 
-   
+//--ga
   if(mode==0) //Only GA, Mahesh's Work
   {
   string par1, par2, temp_l1, temp_l2, temp_r1, temp_r2, c1, c2, c3, c4,s2,str0,str1;
@@ -156,9 +77,93 @@ void GA::crossover(int gen,int mode)
 	 
 
 
-//----
     fout.close();
   } 
+//--ga
+  
+//--sa
+  if(mode==1)  //Only SA,
+   { 
+	 string s2,str0,str1,str2,str3;
+     s2="./chromosomes/."+to_string(gen)+".dat";
+
+     fout.open(s2.c_str(),ios::out); 
+
+     fout<<ff[0]<<"\n";
+     fout<<ff[1]<<"\n";
+     fout<<ff[2]<<"\n";
+     fout<<ff[3]<<"\n";
+
+ 	 str0=ff[0];
+	 for(i=0;i<4;i++)
+	 {  	
+	    srand(time(0));
+        random_shuffle(str0.begin(), str0.end());
+        fout<<str0<<"\n";
+	 }
+	 str1=ff[1];
+	 for(i=0;i<4;i++)
+	 {  
+	    srand(time(0));
+        random_shuffle(str1.begin(), str1.end());
+        fout<<str1<<"\n";
+	 } 
+     str2=ff[2];
+  	 for(i=0;i<4;i++)
+	 {  
+	    srand(time(0));
+        random_shuffle(str2.begin(), str2.end());
+        fout<<str2<<"\n";
+	 }
+	 str3=ff[3];
+	 for(i=0;i<4;i++)
+	 {  	
+	    srand(time(0));
+        random_shuffle(str3.begin(), str3.end());
+        fout<<str3<<"\n";
+	 }
+
+     fout.close();
+   } 
+//--sa
+
+//--hybrid   
+  if(mode==2)  //Hybrid Approach
+  {    string s2,str0,temp;
+       s2="./chromosomes/."+to_string(gen)+".dat";
+       fout.open(s2.c_str(),ios::out); 
+       if(gen==80)//mqu
+         ff[0]="insxchqrwbgluvafkpmzejotyd";
+
+       string mk="insxchmrwbglqvafkpuzejotyd";
+
+       for(int itr=0;itr<4;itr++)
+       {   temp="";
+		   for(int i=0;i<26;i++)
+			  if(ff[itr][i]!=mk[i])
+			  {   temp+=ff[itr][i];
+				  ff[itr][i]='-';    
+			   } 
+		
+		for(int k=0;k<4;k++)
+		{ srand(time(0));
+		  random_shuffle(temp.begin(), temp.end()); 
+		  int c=0;str0=ff[itr];
+		  for(i=0;i<26;i++)  	
+			 if(str0[i]=='-')
+			 {  str0[i]=temp[c];c++;}        
+		  fout<<str0<<"\n";	
+		} 
+		 
+    }  
+    
+    fout<<ff[0]<<"\n";
+    fout<<ff[1]<<"\n";
+    fout<<ff[2]<<"\n";
+    fout<<ff[3]<<"\n";
+    fout.close();
+   }
+//--hybrid
 
 
 //CMAP

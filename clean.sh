@@ -1,52 +1,49 @@
-if [ -f ./data/* ]; 
+#"$(ls -A $DIR)"
+if [ "$(ls -A ./data/)" ]; 
 then 
-  rm ./data/*
+  rm ./data/* 
 else
-  echo "Removing Files"; 
+  echo "Removing Files"
 fi
 
-if [ -f ./chromosomes/*.dat ]; 
+if [ "$(ls -A ./chromosomes/)" ]; 
 then 
   rm ./chromosomes/*.dat
 else
-  echo "Removing Files";
+  echo "Removing Files"
 fi
 
-if [ -f ./chromosomes/.*.dat ]; 
+if [ "$(ls -A ./chromosomes/)" ]; 
 then 
   rm ./chromosomes/.*.dat
 else
-  echo "Removing Files";
+  echo "Removing Files"
 fi
 
-if [ -f ./frequencyanalysis/uni/* ]; 
+if [ "$(ls -A ./frequencyanalysis/uni/)" ]; 
 then 
-  rm ./frequencyanalysis/uni/*
+  rm ./frequencyanalysis/uni/*.dat
 else
-  echo "Removing Files";
+  echo "Removing Files"
 fi
 
-if [ -f  ./frequencyanalysis/bi/* ]; 
+if [ "$(ls -A ./frequencyanalysis/bi/)" ]; 
 then 
-  rm ./frequencyanalysis/bi/*
+  rm ./frequencyanalysis/bi/*.dat
 else
-  echo "Removing Files";
+  echo "Removing Files"
 fi
 
-if [ -f   ./frequencyanalysis/tri/* ]; 
+if [ "$(ls -A ./frequencyanalysis/tri/)" ]; 
 then 
-  rm ./frequencyanalysis/tri/*
+  rm ./frequencyanalysis/tri/*.dat
 else
-  echo "Removing Files";
+  echo "Removing Files"
 fi
 
 if [ -f ./frequencyanalysis/*.png ];
 then
   rm ./frequencyanalysis/*.png
 else
-  echo "Removing Files";
+  echo "Removing Files"
 fi
-
-
-
-

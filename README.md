@@ -18,11 +18,13 @@
 `./buid.sh`
 
 #Execute project and plot graphs
-`./run.sh`         #displays Help
-`./run.sh -CLI`    #Runs on CLI in hybrid mode
-`./run.sh -ga`     #Runs GA Module 
-`./run.sh -sa`     #Runs SA Module 
-`./run.sh -GUI`    #Runs on GUI on GA mode
+```bash
+./run.sh         #displays Help
+./run.sh -CLI    #Runs on CLI in hybrid mode
+./run.sh -ga     #Runs GA Module 
+./run.sh -sa     #Runs SA Module 
+./run.sh -GUI    #Runs on GUI on GA mode
+```
 
 #view individual plots
 ```bash

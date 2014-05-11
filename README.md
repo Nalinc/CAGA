@@ -17,11 +17,6 @@
 ###Build Project###
 `./buid.sh`
 
-###view individual plots###
-```bash
-./run.sh -p                      #Diaplay fitness plot
-./run.sh -p <text> <filename>    #Display n-gram analysis 
-```
 ###Execute project and plot graphs###
 ```bash
 ./run.sh         #displays Help
@@ -30,6 +25,10 @@
 ./run.sh -sa     #Runs SA Module 
 ./run.sh -GUI    #Runs on GUI on GA mode
 ```
-
+###view individual plots###
+```bash
+./run.sh -p                      #Diaplay fitness plot
+./run.sh -p <text> <filename>    #Display n-gram analysis 
+```
 
 ----------------------------------------

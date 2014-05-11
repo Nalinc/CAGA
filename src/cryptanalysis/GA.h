@@ -21,6 +21,7 @@ class GA
      FILE *file;
      char tmp[50],tmp2[50];
      FitN o;
+
 public:
     static char opt[50];
     static char oct[50];

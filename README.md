@@ -28,7 +28,7 @@
 ###view individual plots###
 ```bash
 ./run.sh -p                      #Diaplay fitness plot
-./run.sh -p <text> <filename>    #Display n-gram analysis 
+./run.sh -p <text> <filename>    #Display n-gram analysis. 
 ```
 
 ----------------------------------------
